@@ -4,11 +4,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-function test() {
-  console.log('Hello');
-}
 
-exports.default = test;
+exports.default = function () {
+  console.log('Hello 1');
+  console.log('Hello 2');
+};
+
+;
 
 },{}],2:[function(require,module,exports){
 'use strict';

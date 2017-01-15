@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/gui', function (req, res) {
+  res.render('gui', { title: 'GUI' });
+});
+
 module.exports = router;

@@ -1,5 +1,4 @@
-function test() {
-  console.log('Hello');
-}
-
-export default test;
+export default function () {
+  console.log('Hello 1');
+  console.log('Hello 2');
+};

@@ -6,6 +6,8 @@ const browserify = require('browserify');
 const watchify = require('watchify');
 const babel = require('babelify');
 const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const rename = require("gulp-rename");
 
 function compile(watch) {
   let bundler = watchify(browserify('./views/js/main.js', { debug: true }).transform(babel.configure({
@@ -37,18 +39,23 @@ function watch() {
 }
 
 gulp.task('js', function() { return compile(); });
-gulp.task('js:watch', function() { return watch(); });
 
 gulp.task('sass', function () {
-  return gulp.src('./views/scss/**/*.scss')
+  return gulp.src('./views/style/entry.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 6 versions'],
+      cascade: false
+    }))
+    .pipe(rename('style.css'))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('./public/css/'));
 });
 
-gulp.task('sass:watch', function () {
-  gulp.watch('./views/scss/**/*.scss', ['sass']);
+gulp.task('watch', function () {
+  gulp.watch('./views/style/**/*.scss', ['sass']);
+  compile(true); // js watch
 });
 
 gulp.task('default', ['watch']);
