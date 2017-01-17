@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/gui', function (req, res) {
-  res.render('gui', { title: 'GUI' });
+  res.render('gui', { title: 'GUI', layout: false });
 });
 
 module.exports = router;
