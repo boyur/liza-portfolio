@@ -142,3 +142,43 @@
     position: absolute;
   }
 }
+
+// Checks
+
+.checkbox {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(69, 90, 100, 0.8);
+  margin: 10px;
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox]:checked + label:before {
+    content: "\f00c";
+    color: #f3f3f3;
+    background-color: #00bfa5;
+    border: solid 1px transparent;
+  }
+
+  label {
+    cursor: default;
+
+    &:before {
+      font-family: FontAwesome, serif;
+      display: inline-block;
+      font-size: 13px;
+      text-align: center;
+      line-height: 22px;
+      content: "\00a0";
+      border-radius: 2px;
+      background-color: #ffffff;
+      border: solid 1px #cccccc;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  }
+}
