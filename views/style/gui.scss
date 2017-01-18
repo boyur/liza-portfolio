@@ -268,3 +268,31 @@
     cursor: pointer;
   }
 }
+
+// Social
+
+.socials {
+  display: inline-block;
+  margin: 10px;
+  font-size: 28px;
+}
+
+.socials--green {
+  a {
+    color: $green;
+  }
+}
+.socials--white {
+  a {
+    color: white;
+  }
+}
+
+.social {
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
