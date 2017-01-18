@@ -16,6 +16,10 @@
   }
 }
 
+.background__gray {
+  background: #d6d6d6;
+}
+
 .gui {
   width: 100%;
   height: 100vh;
@@ -145,6 +149,10 @@
 
 // Checks
 
+.gui__checks, .gui__radio {
+  display: inline-block;
+}
+
 .checkbox {
   box-sizing: border-box;
   font-size: 16px;
@@ -159,7 +167,7 @@
   input[type=checkbox]:checked + label:before {
     content: "\f00c";
     color: #f3f3f3;
-    background-color: #00bfa5;
+    background-color: $green;
     border: solid 1px transparent;
   }
 
@@ -180,5 +188,83 @@
       height: 20px;
       margin-right: 10px;
     }
+  }
+}
+
+.radio {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(69, 90, 100, 0.8);
+  margin: 10px;
+
+  input[type=radio] {
+    display: none;
+  }
+
+  label:before {
+    font-family: FontAwesome, serif;
+    display: inline-block;
+    font-size: 28px;
+    text-align: center;
+    line-height: 20px;
+    content: "\00a0";
+    border-radius: 13px;
+    background-color: #ffffff;
+    border: solid 1px #cccccc;
+    height: 21px;
+    width: 21px;
+    margin-right: 10px;
+    vertical-align: sub;
+  }
+
+  input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #00bfa5;
+    background-color: #ffffff;
+  }
+}
+
+// Buttons
+.gui__button {
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+}
+
+.button-1 {
+  background-color: #00bfa5;
+  height: 45px;
+  line-height: 45px;
+
+  padding: 0 20px;
+
+  border: 0;
+  color: white;
+  text-align: center;
+
+  &:hover {
+    background-color: #009688;
+    cursor: pointer;
+  }
+}
+
+.button-2 {
+  height: 45px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: solid 1px #ffffff;
+
+  line-height: 45px;
+
+  padding: 0 20px;
+
+  color: white;
+  text-align: center;
+
+  &:hover {
+    background-color: #ffffff;
+    color: #00bfa5;
+    cursor: pointer;
   }
 }
