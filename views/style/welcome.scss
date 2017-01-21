@@ -26,11 +26,13 @@
   flex-grow: 1;
   text-align: center;
 
-  padding: 40px 0;
+  padding: 40px 40px 30px;
 }
 
 .welcome__menu {
   display: flex;
+
+  font-family: Roboto-Regular, serif;
   text-align: center;
 
   .button-menu {
@@ -63,11 +65,13 @@
 }
 
 .welcome__title {
+  font-family: Roboto-Medium, serif;
   color: $lightGray;
   margin-bottom: 10px;
 }
 
 .welcome__text {
+  font-family: Roboto-Regular, serif;
   color: $lightGray;
   margin-bottom: 30px;
 }
