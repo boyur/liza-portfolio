@@ -228,13 +228,15 @@
 // Buttons
 .gui__button {
   display: inline-block;
+  height: 45px;
   margin: 10px;
   padding: 20px;
+
 }
 
-.button-1 {
+.button-menu {
   background-color: #00bfa5;
-  height: 45px;
+  height: auto;
   line-height: 45px;
 
   padding: 0 20px;
@@ -250,7 +252,7 @@
 }
 
 .button-2 {
-  height: 45px;
+  height: auto;
   border-radius: 5px;
   background-color: transparent;
   border: solid 1px #ffffff;
@@ -272,9 +274,8 @@
 // Social
 
 .socials {
-  display: inline-block;
-  margin: 10px;
   font-size: 28px;
+  margin: 10px;
 }
 
 .socials--green {
@@ -289,6 +290,8 @@
 }
 
 .social {
+  padding: 10px;
+
   opacity: 0.5;
 
   &:hover {

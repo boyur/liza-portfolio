@@ -1,0 +1,73 @@
+.wrapper-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+
+  height: 100vh;
+  background-color: $green;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+
+  width: 380px;
+
+  background-color: rgba(252, 252, 252, 0.85);
+  border-radius: 5px;
+
+  overflow: hidden;
+}
+
+.welcome__main {
+  flex-grow: 1;
+  text-align: center;
+
+  padding: 40px 0;
+}
+
+.welcome__menu {
+  display: flex;
+  text-align: center;
+
+  .button-menu {
+    flex-grow: 1;
+    height: 45px;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+
+    &:first-child {
+      border-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+.user__avatar {
+  display: inline-block;
+  height: 140px;
+  width: 140px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+  vertical-align: middle;
+
+  background-image: url("../images/liza.jpg");
+  background-size: cover;
+}
+
+.welcome__title {
+  color: $lightGray;
+  margin-bottom: 10px;
+}
+
+.welcome__text {
+  color: $lightGray;
+  margin-bottom: 30px;
+}
