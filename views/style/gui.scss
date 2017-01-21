@@ -238,7 +238,6 @@
   background-color: #00bfa5;
   height: auto;
   line-height: 45px;
-
   padding: 0 20px;
 
   border: 0;
@@ -253,13 +252,11 @@
 
 .button-2 {
   height: auto;
+  line-height: 45px;
+  padding: 0 20px;
   border-radius: 5px;
   background-color: transparent;
   border: solid 1px #ffffff;
-
-  line-height: 45px;
-
-  padding: 0 20px;
 
   color: white;
   text-align: center;
@@ -276,6 +273,7 @@
 .socials {
   font-size: 28px;
   margin: 10px;
+  cursor: pointer;
 }
 
 .socials--green {
@@ -293,6 +291,7 @@
   padding: 10px;
 
   opacity: 0.5;
+  text-decoration: none;
 
   &:hover {
     opacity: 1;
