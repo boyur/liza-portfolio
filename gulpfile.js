@@ -10,18 +10,18 @@ const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 
 function compile(watch) {
-  let bundler = watchify(browserify('./views/js/main.js', { debug: true }).transform(babel.configure({
+  let bundler = watchify(browserify('./views/javascript/main.javascript', { debug: true }).transform(babel.configure({
     presets: ["es2015"]
   })));
 
   function rebundle() {
     bundler.bundle()
       .on('error', function(err) { console.error(err); this.emit('end'); })
-      .pipe(source('bundle.js'))
+      .pipe(source('bundle.javascript'))
       .pipe(buffer())
       .pipe(sourcemaps.init({ loadMaps: true }))
       .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('./public/js'));
+      .pipe(gulp.dest('./public/javascript'));
   }
 
   if (watch) {
@@ -38,7 +38,7 @@ function watch() {
   return compile(true);
 }
 
-gulp.task('js', function() { return compile(); });
+gulp.task('javascript', function() { return compile(); });
 
 gulp.task('sass', function () {
   return gulp.src('./views/style/entry.scss')
@@ -55,7 +55,7 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function () {
   gulp.watch('./views/style/**/*.scss', ['sass']);
-  compile(true); // js watch
+  compile(true); // javascript watch
 });
 
 gulp.task('default', ['watch']);

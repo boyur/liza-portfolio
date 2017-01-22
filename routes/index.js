@@ -1,4 +1,5 @@
 let express = require('express');
+const path = require('path');
 let router = express.Router();
 
 /* GET home page. */
@@ -7,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/works', function(req, res, next) {
-  res.render('pages/works', { title: 'Елизавета Боюр' });
+  res.render('pages/works', { title: 'Мои работы' });
 });
 
 router.get('/gui', function (req, res) {

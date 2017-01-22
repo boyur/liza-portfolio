@@ -7,6 +7,9 @@
 @import "main";
 @import "gui";
 
+@import "partials/footer";
+
 // Pages
 
-@import "welcome";
+@import "pages/welcome";
+@import "pages/works";
