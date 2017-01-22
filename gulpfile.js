@@ -10,18 +10,18 @@ const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 
 function compile(watch) {
-  let bundler = watchify(browserify('./views/javascript/main.javascript', { debug: true }).transform(babel.configure({
+  let bundler = watchify(browserify('./source/javascript/main.js', { debug: true }).transform(babel.configure({
     presets: ["es2015"]
   })));
 
   function rebundle() {
     bundler.bundle()
       .on('error', function(err) { console.error(err); this.emit('end'); })
-      .pipe(source('bundle.javascript'))
+      .pipe(source('bundle.js'))
       .pipe(buffer())
       .pipe(sourcemaps.init({ loadMaps: true }))
       .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('./public/javascript'));
+      .pipe(gulp.dest('./public/js'));
   }
 
   if (watch) {
@@ -41,7 +41,7 @@ function watch() {
 gulp.task('javascript', function() { return compile(); });
 
 gulp.task('sass', function () {
-  return gulp.src('./views/style/entry.scss')
+  return gulp.src('./source/style/entry.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
@@ -54,7 +54,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./views/style/**/*.scss', ['sass']);
+  gulp.watch('./source/style/**/*.scss', ['sass']);
   compile(true); // javascript watch
 });
 
