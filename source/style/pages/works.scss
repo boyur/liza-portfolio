@@ -1,4 +1,33 @@
 .works-start {
-  height: 400px;
-  background-color: #455a64;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+}
+
+.works-start__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: url("../svg/portfolio_header.svg") no-repeat top left;
+  background-size: contain;
+
+  width: 800px;
+  height: auto;
+  margin: auto;
+
+  .welcome__title {
+    color: white;
+  }
+
+  .welcome__text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.welcome__triangle {
+  svg {
+    display: block;
+  }
 }
