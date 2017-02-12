@@ -31,3 +31,55 @@
     display: block;
   }
 }
+
+.works-title {
+  display: flex;
+  flex-direction: column;
+  background: #faf8f0;
+}
+
+.big-title--works {
+  background: url("../svg/works_header.svg") no-repeat top left;
+}
+
+.big-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+
+  width: 500px;
+  height: 165px;
+  margin: auto;
+}
+
+.dashes-title {
+  font-family: BERNIERRegular-Regular, serif;
+  position: relative;
+  font-size: 62px;
+  color: #373e42;
+
+  &:after, &:before {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 22px;
+    height: 5px;
+    opacity: 0.2;
+    background-color: #373e42;
+    top: 0.5em;
+  }
+
+  &:after {
+    right: -35px
+  }
+
+  &:before {
+    left: -40px
+  }
+}
+
+.about-talk {
+  height: 300px;
+}
